@@ -1,25 +1,4 @@
-/**************************************************************************************
- * The class MultivalueContacts is created as an assigment for the OOP course of the .
- * Ionian University, DI.
- * It extends the given class Contact, and implements the interface Comparable.
- * Uses ArrayList and Set of java.util library.
- * It provides Constructors with none, one, two, or three of the basic parameters of the
- * class Contact.
- * It provides methods :
- * void addPhonenumber (long) , which adds a new phonenumber to the phonenumbers list. 
- * void addEmail (String), which adds a new email to the emails list.
- * Set<Long>getPhonenumbers & Set<String>getEmails, that return the sets of phonenumbers 
- * and emails in this contact.
- * String toString(), that converts the contact into a readable string.
- * 
- * 
- * @author Nemanja Jevtic- P2017182
- * @version 1.0
- * @since 21.12.1998
-***************************************************************************************/
-
-
-
+/* Ελευθέριος Ελευθεριάδης- Π2017166 */
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -43,9 +22,7 @@ public class MultivalueContacts extends Contact implements Comparable {
 	
 	private ArrayList<Long> phonenumbers = new ArrayList<Long>();
 	private ArrayList<String> emails = new Arraylist<String>();
-	/**
-	 * addPhonenumbers takes a long and if it is a valid phonenumber, adds it to the phonenumbers list
-	 * phonenumbers.
+	/* addPhonenumbers takes a long and if it is a valid phonenumber, adds it to the phonenumbers list phonenumbers.
 	 */
 	public void addPhonenumber (long num) {
 		if(num >= 2000000000L && num <= 9999999999L) 
@@ -53,10 +30,7 @@ public class MultivalueContacts extends Contact implements Comparable {
 		else 
             System.out.println("Invalid phone number "+p);
 	}
-	/**
-	 * addEmail is mostly taken from the Contact.java class (as is the addPhonenumber)
-	 * it checks if the given String is a valid email string, and if so, adds it to the 
-	 * emails list emails.
+	/* addEmail is mostly taken from the Contact.java class (as is the addPhonenumber) it checks if the given String is a valid email string, and if so, adds it to the emails list emails.
 	 */
 	public void addEmail (String mail) {
 		if ( !mail.contains("@") ) {
@@ -83,9 +57,7 @@ public class MultivalueContacts extends Contact implements Comparable {
 	}
 	
 	Set<long> phonenumsSet = new Set<Long>;
-	/**
-	 * getPhonenumbers passes ALL the phonenumbers to a Set phonenumsSet,
-	 * and returns the set phonenumsSet.
+	/* getPhonenumbers passes ALL the phonenumbers to a Set phonenumsSet, and returns the set phonenumsSet.
 	 */
 	public Set <Long> getPhonenumbers() {
 		if(size(this.phonenumsSet)==0)
@@ -97,8 +69,7 @@ public class MultivalueContacts extends Contact implements Comparable {
 	}
 	
 	Set<String> emailsSet = new Set<String>;
-	/**
-	 * Exact same logic as the last one, but returns a String Set with all the emails.
+	/* Exact same logic as the last one, but returns a String Set with all the emails.
 	 */
 	public Set <String> getEmails() {
 		if(size(this.emailsSet)==0)
@@ -109,11 +80,7 @@ public class MultivalueContacts extends Contact implements Comparable {
 		return this.emailsSet;
 			
 	}
-	/**
-	 * Uses the StringBuilder class to make dynamic String, and adds the fullname,
-	 * initial phonenumbers and emails
-	 * and all the other existing numbers and mails of this object to the StringBuilder object,
-	 * makes a String from it, and returns the string..
+	/* Uses the StringBuilder class to make dynamic String, and adds the fullname, initial phonenumbers and emails and all the other existing numbers and mails of this object to the StringBuilder object, makes a String from it, and returns the string..
 	 */
 	public String toString() {
 		
@@ -132,12 +99,7 @@ public class MultivalueContacts extends Contact implements Comparable {
 		String contString = StringBuilder.toString(classString);
 		return contString ;
 	}	
-	/**
-	 * compareTo method of this class takes an MultivalueContacts object and compares its 
-	 * fullname variable to the object's that is calling the method fullname variable.
-	 * For the actual comparsion it uses the compareTo method of the String class, and depending of the int value
-	 * it returns, our method returns a String that says wheather the name that is calling the method comes
-	 * before or after, or its exactly the same with the fullname variable of the given object.
+	/* compareTo method of this class takes an MultivalueContacts object and compares its fullname variable to the object's that is calling the method fullname variable. For the actual comparsion it uses the compareTo method of the String class, and depending of the int value it returns, our method returns a String that says wheather the name that is calling the method comes before or after, or its exactly the same with the fullname variable of the given object.
 	 */
 	public String compareTo(MultivalueContacts a) {
 		(this.fullname.compareTo(a.fullname)<0)? return ("The name "+this.fullname+"is after the name "+a+"."):(this.fullname.compareTo(a.fullname)>0)?return ("The name "+this.fullname+"is before the name "+a+"."): return "The names are exactly the same." ;
